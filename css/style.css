@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+span {
+    cursor: pointer;
+}
+
+.list-group-item {
+    cursor: pointer;
+
+}
