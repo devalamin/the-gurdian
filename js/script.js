@@ -19,4 +19,56 @@ const dsiplaycategories = async () => {
     }
 
 }
+
+const loadDetails = () => {
+    const url = `https://openapi.programming-hero.com/api/news/category/01`
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displayDetails(data.data))
+}
+
+const displayDetails = (details) => {
+    const mainContainer = document.getElementById('main-container');
+    // console.log(details)
+    details.forEach(detail => {
+        console.log(detail)
+
+        const detailDiv = document.createElement('div')
+        detailDiv.classList.add('card', 'my-4')
+        detailDiv.innerHTML = `
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="${detail.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${detail.title}</h5>
+                <p class="card-text">${detail.details.slice(0, 290) + '...'}</p>
+                <div class="bottom">
+                <div class="author">
+                <img class="img-fluid author-img" src="${detail.image_url}">
+               
+                
+                </div>
+                <div class="views">
+                <p>${detail.total_view}</p>
+                </div>
+                <button class="btn btn-primary">More</button>
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+        `
+        mainContainer.appendChild(detailDiv);
+    })
+
+
+}
+
+
+
+
 dsiplaycategories()
+loadDetails()

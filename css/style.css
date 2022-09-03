@@ -23,3 +23,34 @@ span {
     cursor: pointer;
 
 }
+
+.card {
+    max-width: 1080px;
+}
+
+.bottom {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom .author {
+    height: 50px;
+    width: 50px;
+    line-height: 80px;
+}
+
+.bottom .views {
+    line-height: 80px;
+}
+
+.bottom .author img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+button {
+    height: 40px;
+}
