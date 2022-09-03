@@ -11,8 +11,8 @@ const dsiplaycategories = async () => {
     for (const category of newsData) {
         // console.log(category.category_name)
         const li = document.createElement('li');
-        li.setAttribute('onclick', true);
-        li.classList.add('list-group-item', 'border-0');
+        li.setAttribute('onclick', "loadDetails(id)");
+        li.classList.add('list-group-item', 'border-3', 'bg-primary', 'text-white');
         li.innerText = `${category.category_name}`
         menuUl.appendChild(li)
 
@@ -20,8 +20,8 @@ const dsiplaycategories = async () => {
 
 }
 
-const loadDetails = () => {
-    const url = `https://openapi.programming-hero.com/api/news/category/01`
+const loadDetails = (category_id) => {
+    const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`
     fetch(url)
         .then(response => response.json())
         .then(data => displayDetails(data.data))
@@ -53,7 +53,7 @@ const displayDetails = (details) => {
                 <div class="views">
                 <p>${detail.total_view}</p>
                 </div>
-                <button class="btn btn-primary">More</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">More</button>
                 
                 
                 </div>
@@ -71,4 +71,4 @@ const displayDetails = (details) => {
 
 
 dsiplaycategories()
-loadDetails()
+// loadDetails()
