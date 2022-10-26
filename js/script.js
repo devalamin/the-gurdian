@@ -56,13 +56,14 @@ const info = (id) => {
 const displayDetails = (details) => {
 
     const mainContainer = document.getElementById('main-container');
+    mainContainer.textContent = '';
     // console.log(details)
     details.forEach(detail => {
         console.log(detail.author)
 
         const detailDiv = document.createElement('div');
         const modalBody = document.getElementById('modal-body')
-        detailDiv.innerHTML = '';
+
         detailDiv.classList.add('card', 'my-4')
 
         modalBody.innerHTML = `
@@ -123,9 +124,11 @@ const displayDetails = (details) => {
         mainContainer.appendChild(detailDiv);
     })
 
-
 }
+displayDetails()
 
+// displayDetails()
+// info()
 
 
 
