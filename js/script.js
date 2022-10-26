@@ -106,10 +106,12 @@ const displayDetails = (details) => {
                 <p class="card-text">${detail.details.slice(0, 290) + '...'}</p>
                 <div class="bottom">
                 <div class="author">
-                <img class="img-fluid author-img" src="${detail.image_url}">
+                <img class="img-fluid author-img" src="${detail.author.img}">
+                
                
                 
                 </div>
+                <p>${detail.author?.name}</p>
                 <div class="views">
                 <p>${detail.total_view}</p>
                 </div>
