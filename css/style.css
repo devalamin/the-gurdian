@@ -19,6 +19,33 @@ span {
     cursor: pointer;
 }
 
+.image-div {
+    height: 700px;
+    width: 100%;
+}
+
+.image-div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.prev,
+.next {
+    margin-top: 200px;
+    margin-left: 50px;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.next {
+    margin-right: 50px;
+}
+
+
+
+
+
 .list-group-item {
     cursor: pointer;
 
